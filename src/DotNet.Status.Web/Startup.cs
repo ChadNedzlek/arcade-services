@@ -228,7 +228,9 @@ namespace DotNet.Status.Web
             services.AddSingleton<ZenHubClient>();
             services.AddSingleton<IGitHubApplicationClientFactory, GitHubApplicationClientFactory>();
             services.AddSingleton<IGitHubClientFactory, GitHubClientFactory>();
-            services.AddSingleton<ITimelineIssueTriage, TimelineIssueTriage>();
+            services.AddSingleton<IIssueProcessor, RcaIssueProcessor>();
+            services.AddSingleton<IIssueProcessor, TimelineIssueTriage>();
+            services.AddSingleton<IPullRequestProcessor, RecordChecksPullRequestProcessor>();
             services.AddSingleton<ExponentialRetry>();
             services.AddHttpClient();
             services.AddHealthReporting(

@@ -45,7 +45,7 @@ namespace DotNet.Status.Web.Tests
                 Action = "labeled",
                 Issue = new IssuesHookIssue
                 {
-                    Assignee = new IssuesHookUser
+                    Assignee = new HookUser
                     {
                         Login = "TestLabelNotifyUserX",
                     },
@@ -66,13 +66,13 @@ namespace DotNet.Status.Web.Tests
                 {
                     Name = "area-cat"
                 },
-                Repository = new IssuesHookRepository
+                Repository = new HookRepository
                 {
                     Name = "issue-notify-tests",
-                    Owner = new IssuesHookUser { Login = "thatguy-int-tests" },
+                    Owner = new HookUser { Login = "thatguy-int-tests" },
                     Id = 987654321,
                 },
-                Sender = new IssuesHookUser
+                Sender = new HookUser
                 {
                     Login = "thatguy",
                 }

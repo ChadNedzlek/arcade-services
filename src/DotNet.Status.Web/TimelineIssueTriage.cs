@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace DotNet.Status.Web
 {
-    public class TimelineIssueTriage : ITimelineIssueTriage
+    public class TimelineIssueTriage : IIssueProcessor
     {
         private static readonly string _docLink = "[Documentation](https://github.com/dotnet/arcade-services/blob/master/docs/BuildFailuresIssueTriage.md)";
         private static readonly string _labelName = "darcbot";
