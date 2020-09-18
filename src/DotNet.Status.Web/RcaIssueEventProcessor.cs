@@ -15,18 +15,18 @@ using Octokit;
 
 namespace DotNet.Status.Web
 {
-    public class RcaIssueProcessor : IIssueProcessor
+    public class RcaIssueEventProcessor : IIssueEventProcessor
     {
         private readonly Lazy<Task> _ensureLabels;
         
         private readonly IOptions<GitHubConnectionOptions> _githubOptions;
         private readonly IGitHubApplicationClientFactory _gitHubApplicationClientFactory;
-        private readonly ILogger<RcaIssueProcessor> _logger;
+        private readonly ILogger<RcaIssueEventProcessor> _logger;
 
-        public RcaIssueProcessor(
+        public RcaIssueEventProcessor(
             IOptions<GitHubConnectionOptions> githubOptions,
             IGitHubApplicationClientFactory gitHubApplicationClientFactory,
-            ILogger<RcaIssueProcessor> logger)
+            ILogger<RcaIssueEventProcessor> logger)
         {
             _logger = logger;
             _githubOptions = githubOptions;

@@ -9,7 +9,7 @@ using Octokit;
 
 namespace DotNet.Status.Web
 {
-    public interface IIssueProcessor
+    public interface IIssueEventProcessor
     {
         Task ProcessIssueEvent(IssuesHookData issuePayload);
     }

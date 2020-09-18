@@ -18,12 +18,12 @@ using System.Threading.Tasks;
 
 namespace DotNet.Status.Web
 {
-    public class TimelineIssueTriage : IIssueProcessor
+    public class TimelineIssueEventTriage : IIssueEventProcessor
     {
         private static readonly string _docLink = "[Documentation](https://github.com/dotnet/arcade-services/blob/master/docs/BuildFailuresIssueTriage.md)";
         private static readonly string _labelName = "darcbot";
 
-        private readonly ILogger<TimelineIssueTriage> _logger;
+        private readonly ILogger<TimelineIssueEventTriage> _logger;
         private readonly IGitHubApplicationClientFactory _gitHubApplicationClientFactory;
         private readonly IKustoIngestClientFactory _kustoIngestClientFactory;
         private readonly IOptions<KustoOptions> _kustoOptions;
@@ -31,13 +31,13 @@ namespace DotNet.Status.Web
         private readonly ZenHubClient _zenHub;
         private readonly TimelineIssueTriageInternal _internal;
 
-        public TimelineIssueTriage(
+        public TimelineIssueEventTriage(
             IGitHubApplicationClientFactory gitHubApplicationClientFactory,
             IKustoIngestClientFactory clientFactory,
             IOptions<KustoOptions> kustoOptions,
             IOptions<GitHubConnectionOptions> githubOptions,
             ZenHubClient zenHub,
-            ILogger<TimelineIssueTriage> logger)
+            ILogger<TimelineIssueEventTriage> logger)
         {
             _logger = logger;
             _gitHubApplicationClientFactory = gitHubApplicationClientFactory;

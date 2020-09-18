@@ -11,7 +11,7 @@ namespace DotNet.Status.Web.Tests
     [TestFixture]
     public class TimeLineIssueTriageTests
     {
-        private TimelineIssueTriage.TimelineIssueTriageInternal _sut => new TimelineIssueTriage.TimelineIssueTriageInternal();
+        private TimelineIssueEventTriage.TimelineIssueTriageInternal _sut => new TimelineIssueEventTriage.TimelineIssueTriageInternal();
 
         [TestCase("")]
         [TestCase("[]")]

@@ -19,12 +19,12 @@ namespace DotNet.Status.Web.Controllers
     public class GitHubHookController : ControllerBase
     {
         private readonly ILogger<GitHubHookController> _logger;
-        private readonly IEnumerable<IIssueProcessor> _issueProcessors;
-        private readonly IEnumerable<IPullRequestProcessor> _pullRequestProcessors;
+        private readonly IEnumerable<IIssueEventProcessor> _issueProcessors;
+        private readonly IEnumerable<IPullRequestEventProcessor> _pullRequestProcessors;
 
         public GitHubHookController(
-            IEnumerable<IIssueProcessor> issueProcessors,
-            IEnumerable<IPullRequestProcessor> pullRequestProcessors,
+            IEnumerable<IIssueEventProcessor> issueProcessors,
+            IEnumerable<IPullRequestEventProcessor> pullRequestProcessors,
             ILogger<GitHubHookController> logger)
         {
             _logger = logger;
